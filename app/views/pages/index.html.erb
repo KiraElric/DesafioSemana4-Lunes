@@ -1,25 +1,21 @@
-<div class="row">
-  <div class="col-12">
-    <h1 class="font-weight-bold text-center display-2">Posts publicados</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Titulo</th>
-          <th>Fecha Publicación</th>
-          <th>Imagen</th>
-          <th>Contenido</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <% @posts.each do |post|%>
-          <td><%=post.title%></td>
-          <td><%=post.timestamps%></td>
-          <td><%=post.image_url%></td>
-          <td><%=post.content%></td>
-          <% end %>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+<h1 class="font-weight-bold text-center display-2">Posts publicados</h1>
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Fecha publicación</th>
+      <th>Imagen</th>
+      <th>Contenido</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post|%>
+    <tr>
+      <td><%=post.title%></td>
+      <td><%=post.created_at%></td>
+      <td><img src="<%=post.image_url%>" alt="img" class="img-fluid rounded" style="max-width: 300px; max-height:400px;"></td>
+      <td class="text-justify"><%=post.content%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
