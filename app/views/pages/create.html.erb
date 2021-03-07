@@ -1,2 +1,16 @@
-<h1>Pages#create</h1>
-<p>Find me in app/views/pages/create.html.erb</p>
+<div class="row">
+  <% if @post.error.any?%>
+    <div id="error_explanation">
+      <h2 class="font-weight-bold text-center display-2">
+        Se han encontrado <%= pluralize.(@post.error.count, "error")%>
+      </h2>
+      <ul>
+        <% @post.error.full_message.each do |message|%>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% else %>
+    <h1 class="font-weight-bold text-center display-2">Post publicado con exito! :)</h1>
+  <% end %>
+</div>
