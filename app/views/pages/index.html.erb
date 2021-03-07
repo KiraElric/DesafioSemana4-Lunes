@@ -5,6 +5,7 @@
       <thead>
         <tr>
           <th>Titulo</th>
+          <th>Fecha Publicación</th>
           <th>Imagen</th>
           <th>Contenido</th>
         </tr>
@@ -13,6 +14,7 @@
         <tr>
           <% @posts.each do |post|%>
           <td><%=post.title%></td>
+          <td><%=post.timestamps%></td>
           <td><%=post.image_url%></td>
           <td><%=post.content%></td>
           <% end %>
